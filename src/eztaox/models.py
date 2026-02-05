@@ -176,7 +176,7 @@ class MultiVarModel(eqx.Module):
         Returns:
             JAXArray: AIC value.
         """
-        k = sum(p.size for p in params.values())
+        k = ravel_pytree(params).size
         log_likelihood = self.log_prob(params)
         return 2 * k - 2 * log_likelihood
 
@@ -189,7 +189,7 @@ class MultiVarModel(eqx.Module):
             JAXArray: BIC value.
         """
         n = self.y.size
-        k = sum(p.size for p in params.values())
+        k = ravel_pytree(params).size
         log_likelihood = self.log_prob(params)
         return jnp.log(n) * k - 2 * log_likelihood
 
