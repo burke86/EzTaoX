@@ -6,7 +6,6 @@ light curves using Gaussian Processes (GPs).
 from collections.abc import Callable
 from functools import partial
 
-
 import equinox as eqx
 import jax
 import jax.flatten_util
