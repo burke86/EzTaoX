@@ -251,8 +251,8 @@ def test_aic_bic(data, kernel, random) -> None:
     n_params = len(jax.flatten_util.ravel_pytree(model_param)[0])
     n_data = len(y)
 
-    aic = m.aic(log_prob, n_params)
-    bic = m.bic(log_prob, n_params, n_data)
+    aic = m.aic(log_prob)
+    bic = m.bic(log_prob)
 
     expected_aic = 2 * n_params - 2 * log_prob
     expected_bic = n_params * jnp.log(n_data) - 2 * log_prob
