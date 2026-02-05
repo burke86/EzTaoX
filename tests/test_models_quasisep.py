@@ -233,6 +233,7 @@ def test_multivar_pred_unsorted_inputs(data, kernel, random) -> None:
     assert_allclose(mean_unsorted[idx], mean_sorted)
     assert_allclose(std_unsorted[idx], std_sorted)
 
+
 def test_aic_bic(data, kernel, random) -> None:
     x, y, b = data
 
