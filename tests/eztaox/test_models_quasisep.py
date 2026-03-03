@@ -332,7 +332,9 @@ def test_multivar_qs_vs_nonqs_exp_same(data, random) -> None:
 
     # MultiVarModel default amp/scale expects log_amp_scale for bands 1..nBand-1
     nBand = 3
-    log_amp_scale = jnp.zeros((nBand - 1,))  # keep equivalence test focused on kernel only
+    log_amp_scale = jnp.zeros(
+        (nBand - 1,)
+    )  # keep equivalence test focused on kernel only
 
     # build models
     m_qs = MultiVarModel((t, b), y, yerr, k_qs, nBand=nBand, has_jitter=True)
