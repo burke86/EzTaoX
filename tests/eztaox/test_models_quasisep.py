@@ -314,6 +314,7 @@ def test_univar_qs_vs_nonqs_exp_same(data, random):
     assert_allclose(g_qs["mean"], g_nonqs["mean"])
     assert_allclose(g_qs["log_jitter"], g_nonqs["log_jitter"])
 
+
 def test_multivar_qs_vs_nonqs_exp_same(data, random) -> None:
     """QS vs non-QS Exp kernel equivalence in MultiVarModel."""
     t, y, b = data
