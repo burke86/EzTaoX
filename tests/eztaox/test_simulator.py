@@ -7,10 +7,9 @@ import jax.numpy as jnp
 import numpy as np
 import pytest
 from scipy.stats import binned_statistic, ks_2samp
+from tinygp.kernels import Exp as Exp_nonqs
 
 import eztaox.kernels.quasisep as ekq
-
-from tinygp.kernels import Exp as Exp_nonqs
 from eztaox.simulator import MultiVarSim, UniVarSim
 
 
